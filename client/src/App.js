@@ -10,8 +10,8 @@ function App() {
       <h1>Favorite Authors</h1>
       <Routes>
         <Route path='/api' element={<ListAuthors/>} />
-        <Route path='/new' element={<AddAuthor />} />
-        <Route path='/edit/:id' element={<UpdateAuthor />} />
+        <Route path='/api/new' element={<AddAuthor />} />
+        <Route path='/api/edit/:id' element={<UpdateAuthor />} />
       </Routes>
     </div>
   );

@@ -19,7 +19,7 @@ const UpdateAuthor = () => {
 
     const updatedAuthor = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:8000/edit/${id}`, {name})
+        axios.put(`http://localhost:8000/api/edit/${id}`, {name})
             .then(res => {
                 console.log(res);
                 navigate('/api');

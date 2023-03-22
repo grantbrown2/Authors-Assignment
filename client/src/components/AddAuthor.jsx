@@ -14,7 +14,7 @@ const AddAuthor = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/new', {name})
+        axios.post('http://localhost:8000/api/new', {name})
             .then(res => {
                 setAuthor([...author, res.data]);
                 navigate('/api');

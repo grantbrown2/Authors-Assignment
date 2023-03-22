@@ -16,7 +16,7 @@ const ListAuthors = () => {
     }, [])
 
     const deleteAuthor = (id) => {
-        axios.delete(`http://localhost:8000/remove/${id}`)
+        axios.delete(`http://localhost:8000/api/remove/${id}`)
             .then((res) => {removeFromDom(id)})
             .catch(err => console.log(err))
     }
@@ -27,7 +27,7 @@ const ListAuthors = () => {
 
     return (
         <div className='table-wrapper'>
-            <Link to={'/new'}>Add an author</Link>
+            <Link to={'/api/new'}>Add an author</Link>
             <p>We have quotes by:</p>
             <table>
                 <thead>
@@ -43,7 +43,7 @@ const ListAuthors = () => {
                                 <tr key={idx}>
                                     <td>{author.name}</td>
                                     <td>
-                                        <Link className='edit-button' to={`/edit/${author._id}`}>Edit</Link>
+                                        <Link className='edit-button' to={`/api/edit/${author._id}`}>Edit</Link>
                                         <button className='delete-button' onClick={(e)=>{deleteAuthor(author._id)}}>Delete</button>
                                     </td>
                                 </tr>

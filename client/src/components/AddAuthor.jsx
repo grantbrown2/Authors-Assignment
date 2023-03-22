@@ -17,7 +17,7 @@ const AddAuthor = () => {
         axios.post('http://localhost:8000/new', {name})
             .then(res => {
                 setAuthor([...author, res.data]);
-                navigate('/');
+                navigate('/api');
             })
             .catch(err=>{
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
@@ -32,14 +32,14 @@ const AddAuthor = () => {
 
     return (
         <div className='author-list'>
-            <Link to={'/'}>Home</Link>
+            <Link to={'/api'}>Home</Link>
             <p>Add a new author:</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" onChange={(e)=>{setName(e.target.value);}}/>
                 {errors.map((err, index) => <p key={index}>{err}</p>)}
                 <div className='button'>
-                    <Link to={"/"} className='cancel-button'>Cancel</Link>
+                    <Link to={"/api"} className='cancel-button'>Cancel</Link>
                     <input type="submit" value="Submit" className='submit-button' />
                 </div>
             </form>

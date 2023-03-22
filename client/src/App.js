@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <h1>Favorite Authors</h1>
       <Routes>
-        <Route path='/' element={<ListAuthors/>} />
+        <Route path='/api' element={<ListAuthors/>} />
         <Route path='/new' element={<AddAuthor />} />
         <Route path='/edit/:id' element={<UpdateAuthor />} />
       </Routes>

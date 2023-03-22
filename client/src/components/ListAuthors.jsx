@@ -8,7 +8,7 @@ const ListAuthors = () => {
     const [author, setAuthor] = useState([]);
 
     useEffect(()=> {
-        axios.get('http://localhost:8000/')
+        axios.get('http://localhost:8000/api')
         .then((res) => {
             setAuthor(res.data);
         })

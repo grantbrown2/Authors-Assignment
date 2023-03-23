@@ -9,9 +9,9 @@ function App() {
     <div className="App">
       <h1>Favorite Authors</h1>
       <Routes>
-        <Route path='api/' element={<ListAuthors/>} />
-        <Route path='api/new' element={<AddAuthor />} />
-        <Route path='api/edit/:id' element={<UpdateAuthor />} />
+        <Route path='/' element={<ListAuthors/>} />
+        <Route path='/authors/new' element={<AddAuthor />} />
+        <Route path='/authors/edit/:id' element={<UpdateAuthor />} />
       </Routes>
     </div>
   );

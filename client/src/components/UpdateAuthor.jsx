@@ -22,7 +22,7 @@ const UpdateAuthor = () => {
         axios.put(`http://localhost:8000/api/edit/${id}`, {name})
             .then(res => {
                 console.log(res);
-                navigate('/api');
+                navigate('/');
             })
             .catch(err=>{
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
@@ -37,14 +37,14 @@ const UpdateAuthor = () => {
 
     return (
         <div className='author-list'>
-            <Link to={'/api'}>Home</Link>
+            <Link to={'/'}>Home</Link>
             <p>Edit this author:</p>
             <form onSubmit={updatedAuthor}>
                 <label htmlFor="name">Name:</label>
                 <input name='name' value={name} type="text" onChange={(e)=>{setName(e.target.value);}}/>
                 {errors.map((err, index) => <p key={index}>{err}</p>)}
                 <div className='button'>
-                    <Link to={"/api"} className='cancel-button'>Cancel</Link>
+                    <Link to={"/"} className='cancel-button'>Cancel</Link>
                     <input type="submit" value="Submit" className='submit-button' />
                 </div>
             </form>
